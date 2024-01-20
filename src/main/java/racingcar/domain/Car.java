@@ -14,4 +14,8 @@ public class Car {
     public void forward() {
         this.steps += STEP;
     }
+
+    public String getSteps() {
+        return steps;
+    }
 }
