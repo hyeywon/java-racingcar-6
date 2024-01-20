@@ -14,7 +14,8 @@ public class GameService {
         List<String> result = new ArrayList<>();
 
         for (int i = 0; i < gameDto.getTrynum(); i++) {
-            result.addAll(move(cars).stream()
+            move(cars);
+            result.addAll(cars.stream()
                     .map(Car::getSteps)
                     .toList());
         }
@@ -26,9 +27,8 @@ public class GameService {
                 .map(Car::new).collect(Collectors.toList());
     }
 
-    private List<Car> move(List<Car> cars) {
+    private void move(List<Car> cars) {
         cars.forEach(this::stepForwardByRandom);
-        return cars;
     }
 
     private void stepForwardByRandom(Car car) {
