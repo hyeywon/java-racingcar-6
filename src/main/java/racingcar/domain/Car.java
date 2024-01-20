@@ -2,6 +2,7 @@ package racingcar.domain;
 
 public class Car {
 
+    private final static String STEP = "-";
     private String name;
     private String steps;
 
@@ -10,7 +11,7 @@ public class Car {
         this.steps = "";
     }
 
-    public void forward() {     // todo: 사실상 setter가 아닌가 ??
-        this.steps += "-";
+    public void forward() {
+        this.steps += STEP;
     }
 }
