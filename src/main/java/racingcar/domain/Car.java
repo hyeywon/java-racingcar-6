@@ -15,6 +15,10 @@ public class Car {
         this.steps += STEP;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public String getSteps() {
         return steps;
     }
