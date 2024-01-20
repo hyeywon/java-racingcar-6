@@ -9,11 +9,12 @@ import racingcar.dto.GameDto;
 public class GameService {
 
     public void play(GameDto gameDto) {
-        Cars cars = create(gameDto.getCarNames());
+        Cars cars = createCars(gameDto.getCarNames());
 
+        
     }
 
-    private Cars create(List<String> carNames) {
+    private Cars createCars(List<String> carNames) {
         return new Cars(carNames.stream()
                 .map(Car::new)
                 .collect(Collectors.toList()));
