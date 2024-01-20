@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import racingcar.domain.Car;
-import racingcar.dto.GameDto;
+import racingcar.dto.GameRequest;
 
 public class GameService {
 
-    public void play(GameDto gameDto) {
-        List<Car> cars = initCars(gameDto.getCarNames());
+    public GameResponse play(GameRequest gameRequest) {
+        List<Car> cars = initCars(gameRequest.getCarNames());
         List<String> result = new ArrayList<>();
 
-        for (int i = 0; i < gameDto.getTrynum(); i++) {
+        for (int i = 0; i < gameRequest.getTrynum(); i++) {
             move(cars);
             result.addAll(cars.stream()
                     .map(Car::getSteps)

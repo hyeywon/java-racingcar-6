@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class GameDto {
+public class GameRequest {
 
     private List<String> carNames;
     private Integer trynum;
 
-    public GameDto(String carNames, String trynum) {
+    public GameRequest(String carNames, String trynum) {
         validate(carNames, trynum);
     }
 
